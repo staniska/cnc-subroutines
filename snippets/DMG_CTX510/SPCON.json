@@ -1,0 +1,34 @@
+{
+  "name": "SPCON",
+  "comment": "spcon с выбором плоскости и DIAMON",
+  "variables": [
+    {
+      "name": "plane",
+      "type": "number",
+      "default": 17
+    },
+    {
+      "name": "diamof",
+      "type": "number",
+      "default": 0
+    }
+  ],
+  "calc": [
+    {
+      "name": "diam",
+      "expression": "{diamof} ? 'DIAMOF' : ''"
+    }
+  ],
+  "body": [
+    "SPCON(4)",
+    "SETMS(1)",
+    "{diam}",
+    "G{plane}",
+    " ",
+    " ",
+    "M5",
+    "G18",
+    "SPCOF(4)",
+    "SETMS(4)"
+  ]
+}

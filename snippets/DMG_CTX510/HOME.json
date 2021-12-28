@@ -1,0 +1,14 @@
+{
+  "name": "Home",
+  "comment": "go to safe position",
+  "variables": [
+    {
+      "name": "Z_pos",
+      "type": "number",
+      "default": 7
+    }
+  ],
+  "body": [
+    "HOME({Z_pos})"
+  ]
+}

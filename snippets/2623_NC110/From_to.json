@@ -1,0 +1,71 @@
+{
+  "name": "From-to",
+  "comment": "От, до, с шагом",
+  "variables": [
+    {
+      "name": "Cycle_name",
+      "type": "string",
+      "default": "JOPA"
+    },
+    {
+      "name": "R_from_num",
+      "type": "number",
+      "default": 1
+    },
+    {
+      "name": "R_to_num",
+      "type": "number",
+      "default": 2
+    },
+    {
+      "name": "R_shag_num",
+      "type": "number",
+      "default": 3
+    },
+    {
+      "name": "From",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "To",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "Shag",
+      "type": "number",
+      "default": 2
+    }
+  ],
+  "calc":[
+    {
+      "name": "compare",
+      "expression": "{From} > {To} ? '>=': '<='"
+    },
+    {
+      "name": "compare2",
+      "expression": "{From} > {To} ? '<': '>'"
+    },
+    {
+      "name": "compare3",
+      "expression": "{From} > {To} ? '>': '<'"
+    },
+    {
+      "name": "sign",
+      "expression": "{From} > {To} ? '-': '+'"
+    }
+  ],
+  "body": [
+    "R{R_from_num}={From}    ;Начало",
+    "R{R_to_num}={To}    ;Конец",
+    "R{R_shag_num}={Shag}     ;Шаг",
+    "{Cycle_name}:",
+    " ",
+    "R{R_from_num}=R{R_from_num}{sign}R{R_shag_num}",
+    "IF ((R{R_from_num}{compare2}R{R_to_num}) AND (R{R_from_num}{compare3}(R{R_to_num}{sign}R{R_shag_num})))",
+    "  R{R_from_num}=R{R_to_num}",
+    "ENDIF",
+    "IF (R{R_from_num}{compare}R{R_to_num}) GOTOB {Cycle_name}"
+  ]
+}

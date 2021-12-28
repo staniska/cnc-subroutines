@@ -1,0 +1,19 @@
+{
+  "name": "TRANSMIT",
+  "comment": "Преобразование с DIAMOF",
+  "body": [
+    "SPCON(4)",
+    "SETMS(1)",
+    "TRANSMIT",
+    "DIAMOF",
+    "G17",
+    " ",
+    " ",
+    "M5",
+    "TRAFOOF",
+    "DIAMON",
+    "G18",
+    "SPCOF(4)",
+    "SETMS(4)"
+  ]
+}

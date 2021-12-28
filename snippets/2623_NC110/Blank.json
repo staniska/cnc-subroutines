@@ -1,0 +1,39 @@
+{
+  "name": "Blank",
+  "comment": "Заготовка для отрисовки графики",
+  "variables": [
+    {
+      "name": "X_min",
+      "type": "number",
+      "default": -300
+    },
+    {
+      "name": "X_max",
+      "type": "number",
+      "default": 300
+    },
+    {
+      "name": "Y_min",
+      "type": "number",
+      "default": -300
+    },
+    {
+      "name": "Y_max",
+      "type": "number",
+      "default": 300
+    },
+    {
+      "name": "Z_min",
+      "type": "number",
+      "default": -300
+    },
+    {
+      "name": "Z_max",
+      "type": "number",
+      "default": 0
+    }
+  ],
+  "body": [
+    "(UCG,1,X{X_min}X{X_max},Y{Y_min}Y{Y_max},Z{Z_min}Z{Z_max},0,-2)"
+  ]
+}

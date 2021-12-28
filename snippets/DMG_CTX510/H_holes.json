@@ -1,0 +1,49 @@
+{
+  "name": "_holes",
+  "comment": "Отверстия с зажимом патрона",
+  "variables": [
+    {
+      "name": "Cycle_name",
+      "type": "string",
+      "default": "_HOLES"
+    },
+    {
+      "name": "R_from_num",
+      "type": "number",
+      "default": 1
+    },
+    {
+      "name": "R_to_num",
+      "type": "number",
+      "default": 2
+    },
+    {
+      "name": "Start_ang",
+      "type": "number",
+      "default": 30
+    },
+    {
+      "name": "From",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "To",
+      "type": "number",
+      "default": 0
+    }
+  ],
+  "body": [
+    "R{R_from_num}={From}    ;Начало",
+    "R{R_to_num}={To}    ;Конец",
+    "{Cycle_name}:",
+    "M413",
+    "G0 C4=DC({Start_ang}+(360/R{R_to_num})*(R1-1))",
+    "M412",
+    " ",
+    " ",
+    "M413",
+    "R{R_from_num}=R{R_from_num}+1",
+    "IF (R{R_from_num}<=R{R_to_num}) GOTOB {Cycle_name}"
+  ]
+}
