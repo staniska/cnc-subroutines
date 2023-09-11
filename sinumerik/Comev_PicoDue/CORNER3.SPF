@@ -1,16 +1,16 @@
 PROC CORNER3(REAL X_CORNER,REAL Z_CORNER,REAL _RND,REAL _MAX_DEPTH,REAL TOOL_CHANGE_POINT,REAL _MAX_DEPTH2,REAL _FEED2,STRING _TOOL_NAME)
 
-;На реальном станке добавить длину строки STRING[20]
+;STRING[20] for real machine
 
 
-;X_CORNER    - X угла
-;Z_CORNER    - Z угла
-;_RND        - радиус при вершине
-;_MAX_DEPTH  - максимальный Ap для первого резца
-;TOOL_CHANGE_POINT    - точка смены инструмента для подпрограммы HOME
-;_MAX_DEPTH2  - максимальный Ap для второго резца
-;_FEED2       - подача для второго резца
-;_TOOL_NAME   - имя второго резца
+;X_CORNER    - X end point
+;Z_CORNER    - Z end point
+;_RND        - radius at corner
+;_MAX_DEPTH  - max Ap for PCBNR
+;TOOL_CHANGE_POINT    - tool change point for "HOME" subroutine
+;_MAX_DEPTH2  - max Ap for second tool
+;_FEED2       - second tool feedrate
+;_TOOL_NAME   - second tool name
 
 DEF STRING[30] ERROR_TEXT="";
 DEF REAL X_ACT;
@@ -67,7 +67,7 @@ ENDFOR
 HOME(TOOL_CHANGE_POINT)
 
 
-;Открыть для реального станка
+;uncomment strings for real machine
 ;IF (_TOOL_NAME=="")
 ;  _TOOL_NAME="PROH"
 ;ENDIF
@@ -75,7 +75,7 @@ HOME(TOOL_CHANGE_POINT)
 ;T=_TOOL_NAME
 ;M6
 
-;G0 Y0 ;Открыть для станов с физической осью Y
+;G0 Y0 ;Uncomment string for lathe with Y axis
 
 M4
 

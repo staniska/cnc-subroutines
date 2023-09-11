@@ -1,6 +1,6 @@
 {
   "name": "SPCON",
-  "comment": "spcon с выбором плоскости и DIAMON",
+  "comment": "spcon with plane select, DIAMON",
   "variables": [
     {
       "name": "plane",

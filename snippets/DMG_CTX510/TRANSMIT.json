@@ -1,6 +1,6 @@
 {
   "name": "TRANSMIT",
-  "comment": "Преобразование с DIAMOF",
+  "comment": "TRANSMIT - TRAFOOF, DIAMOF",
   "body": [
     "SPCON(4)",
     "SETMS(1)",

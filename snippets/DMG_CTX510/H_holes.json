@@ -1,6 +1,6 @@
 {
   "name": "_holes",
-  "comment": "Отверстия с зажимом патрона",
+  "comment": "Holes with spindle clamping",
   "variables": [
     {
       "name": "Cycle_name",
@@ -34,8 +34,8 @@
     }
   ],
   "body": [
-    "R{R_from_num}={From}    ;Начало",
-    "R{R_to_num}={To}    ;Конец",
+    "R{R_from_num}={From}    ;Start hole number",
+    "R{R_to_num}={To}    ;End hole number",
     "{Cycle_name}:",
     "M413",
     "G0 C4=DC({Start_ang}+(360/R{R_to_num})*(R1-1))",
